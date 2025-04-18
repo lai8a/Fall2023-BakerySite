@@ -1,0 +1,24 @@
+{% from 'navbar.html' import navbar, headerEnd %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Luscious and Sweet Gourmet Bakery</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <!-- Laiba's sources for free icons and fonts: RemixIcons, BoxIcons, and GoogleFonts -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <!-- JavaScript executes after HTML loads -->
+        <script src="{{ url_for('static', filename='activetab.js') }}" defer></script>
+    </head>
+    <body>
+        {{ navbar(employee, loggedin) }} 
+        {{ headerEnd() }}
+        
+        <!-- Include the gallery template here -->
+        {% include 'gallery.html' %}
+
+        {% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,461 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    text-decoration: none !important;
+    list-style: none;
+}
+:root{
+    --bg-color: #fcf5ff;
+    --text-color: #3a3a3a;
+    --main-color: #ff6ebe;
+}
+body{
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+header{
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: all .50s ease;
+}
+.logo-image{
+    display: flex;
+    align-items: center;
+    margin-right: 3px;
+    width: 250px;
+    height: auto;
+}
+.nav-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    margin: 0;
+}
+.nav-bar a{
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    /* padding: 5px 0; */
+    /* margin: 0px 30px; */
+    transition: all .50s ease;
+    text-wrap: nowrap;
+    /* white-space: nowrap; */
+}
+.nav-bar a:hover{
+    color: var(--main-color);
+}
+.nav-bar a.active{
+    color: var(--main-color);
+}
+.login{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+.login a{
+    margin-right: 25px;
+    margin-left: 10px;
+    color: var(--text-color);
+    font-size: 1.0rem;
+    font-weight: 500;
+    transition: all .50s ease;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.user i{
+    color: var(--main-color);
+    font-size: 28px;
+    margin-right: 7px;
+}
+.login a:hover{
+    color: var(--main-color)
+}
+#menu-icon{
+    font-size: 35px;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* CSS for contact.html */
+.contact-container, .contact-container-row, .contact-i {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-container, .contact-bottom {
+    gap: 4rem;
+}
+
+.contact-top-row-one {
+    display: flex;
+    gap: 3rem;
+    padding-bottom: 2rem;
+}
+
+.contact-top-row-two {
+    background-color: #f4d3e0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+    border: var(--text-color) 1px solid;
+}
+
+.contact-middle {
+    width: 47rem;
+}
+
+.contact-form, .menu-form {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.375rem;
+    border: #dee2e6 1px solid;
+}
+
+.contact-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-bottom-row {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.contact-details-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.contact-form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-text-centered, .contact-i > .contact-i-details-div {
+    text-align: center;
+}
+
+.contact-i {
+    width: 25%;
+    text-wrap: wrap;
+}
+
+#contact-icons {
+    font-size: 4.5rem;
+}
+
+.social-media-svgs {
+    filter: invert(48%) sepia(69%) saturate(828%) hue-rotate(295deg) brightness(102%) contrast(101%);
+    font-size: 2.5rem;
+}
+
+.social-media-svgs:hover {
+    filter: invert(48%) sepia(69%) saturate(828%) hue-rotate(295deg) brightness(82%) contrast(101%);
+}
+
+.mail-to-links {
+    color: var(--main-color)
+}
+
+.contact-headings {
+    color: #f1a4c5;
+}
+
+.red-asterisk {
+    color: red;
+}
+
+/* CSS for Reply Contact (uses some Menu Admin CSS) */
+.reply-contact-left {
+    width: 35%;
+}
+
+/*---------------------------------- CSS for Menu Admin pages --------------------------------*/
+.menu-admin-content, .reply-contact-content {
+    display: flex;
+    justify-content: space-around;
+    color: #3a3a3a;
+    margin: 0;
+}
+
+.menu-admin-left {
+    width: 25%;
+}
+
+.menu-admin-right, .reply-contact-right {
+    width: auto;
+    height: auto;
+}
+
+.menu-form {
+    background-color: #f1a4c5;
+    padding: 1.5rem;
+    border-radius: 0.375rem;
+    border: 2px solid rgb(255, 140, 199);
+    background-color: rgb(255, 192, 227);
+}
+
+.btn.btn-style {
+    color: var(--text-color);
+    font-weight: bold;
+    background-color: #ff6ebe;
+}
+
+.btn.btn-style:hover, .btn.btn-style:active, .btn.btn-style:focus-visible {
+    color: var(--text-color);
+    background-color: #e52c92;
+    border-color: #e52c92;
+    transition: 0.2s;
+}
+
+/*---------------------------------- CSS for order.html -------------------------------------*/
+/* Main container */
+.header {
+    text-align: center;
+}
+
+.order-header {
+    color: rgb(128, 128, 128); 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Ensure date-time on the right and order forms on the left */
+}
+
+/* Order form container */
+.order-form-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: space-between; /* Distribute items along the main axis */
+    align-items: center; /* Center items along the cross axis */
+    margin-top: 20px;
+    margin-left: 15%;
+    margin-bottom: 15px;
+    padding: 20px;
+    border: 2px solid rgb(255, 140, 199);
+    position: relative;
+    background-color: rgb(255, 192, 227);
+    border-radius: 10px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 10%);
+}
+
+.order-form-container div {
+    flex: 1; 
+}
+
+.order-form-container select,
+.order-form-container input,
+.order-form-container textarea {
+    width: 100%; 
+    box-sizing: border-box; 
+    margin-bottom: 10px; 
+}
+
+/* Date-time container */
+.date-time-container {
+    flex: 1;
+    max-width: 20%; 
+    padding: 20px;
+}
+
+/* Style for the delete (x) button */
+.delete-button {
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    cursor: pointer;
+    color: rgb(250, 7, 108)
+}
+
+/* Style for the item type dropdown */
+.order-form-container .item-type-dropdown {
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(255, 216, 238);
+    border-radius: 5px;
+}
+
+/* "Add Item to Order" button */
+.add-button {
+    display: block;
+    margin: 20px auto 0;
+    position: relative;
+    background-color: rgb(255, 93, 168);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    filter: brightness(0.8);
+}
+
+.submit-button {
+    margin-top: 20%;
+    margin-left: 80%;
+    margin-right: 20px; /* Adjusted margin to 20px from the right */
+    padding: 10px 20px;
+    background-color: #ff6ebe; /* Highlight color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #e52c92; 
+    transition: background-color 0.3s ease;
+}
+
+.label-input-pair {
+    display: flex;
+    align-items: center;
+}
+
+.label-input-pair label {
+    flex: 1; 
+    white-space: nowrap;
+}
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.orderConfirmation {
+    text-align: center;
+}
+/*---------------------------------- CSS for Profile.html & viewOrder.html -------------------------------------*/
+
+.order {
+    box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+    border-radius: 10px;
+    background-color: #fff;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.order p {
+    margin: 10px 0;
+}
+
+h1 {
+    color: rgb(255, 93, 168);
+}
+
+label {
+    margin-right: 10px;
+    color: rgb(255, 93, 168);
+}
+
+#orderFilter {
+    color: rgb(255, 93, 168);
+    background-color: #fff;
+    border: 1px solid rgb(255, 93, 168);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#orders {
+    margin-top: 20px;
+}
+
+.img-account-profile {
+    height: 10rem;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.card-header:first-child {
+    border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header {
+    padding: 1rem 1.35rem;
+    margin-bottom: 0;
+    background-color: rgba(33, 40, 50, 0.03);
+    border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control,
+.dataTable-input {
+    display: block;
+    width: 100%;
+    padding: 0.875rem 1.125rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #69707a;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c5ccd6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.35rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-borders .nav-link.active {
+    color: rgb(255, 93, 168);
+    border-bottom-color: rgb(255, 93, 168);
+}
+
+.nav-borders .nav-link {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.btn.btn-profile {
+    color: #fff;
+    background-color: #ff5da8;
+}
+
+.btn.btn-profile:hover, .btn.btn-profile:active, .btn.btn-profile:focus-visible {
+    color: #fff;
+    background-color: #e52c92;
+    transition: 0.2s;
+}

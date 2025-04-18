@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    #footer {
+      margin-top: 2rem;
+      width: 100%;
+      background-color: rgb(215, 154, 178);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      height: 10.5rem; /* Adjust the height as needed */
+    }
+
+    .footer-icon-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .ri {
+      padding: 6px;
+      font-size: 25px;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      margin: 1px 3px;
+      border-radius: 0.375rem;
+      background-color: #ea4c89;
+      color: white;
+    }
+
+    .margin-right-30 {
+      margin-right: 30px;
+    }
+
+    .margin-right-90 {
+      margin-right: 90px;
+    }
+
+    .ri:hover, .contact-button:hover {
+      filter: brightness(0.8);
+    }
+
+    .text-container p {
+      margin-left: 40px;
+      /* font-family: 'Garamond', serif; */
+      font-size: 20px;
+    }
+
+    .contact-container {
+      margin-right: 40px;
+    }
+
+    .contact-info {
+      /* font-family: 'Garamond', serif; */
+      font-size: 20px;
+      color: white;
+      text-decoration: none; 
+      margin-top: 5px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 5px 20px;
+      background-color: #ea4c89;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: -50px;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+  <footer id="footer">
+    <div class="text-container">
+      <p>Located:</p>
+      <br>
+      <p>319 South Pitney Road Galloway, NJ 08205</p>
+    </div>
+
+    <div class="footer-icon-container">
+      <a href="https://www.facebook.com/lusciousandsweet/" class="ri ri-facebook-circle-fill margin-right-30" target="_blank"></a>
+      <a href="https://twitter.com/LSBakeshop" class="ri ri-instagram-line margin-right-30" target="_blank"></a>
+      <a href="https://twitter.com/LSBakeshop" class="ri ri-twitter-x-fill margin-right-30" target="_blank"></a>
+      <a href="https://www.pinterest.com/iconhospitality/luscious-sweet-gourmet-bakery/" class="ri ri-pinterest-fill margin-right-90" target="_blank"></a>
+    </div>
+
+    <div class="contact-container">
+      <p class="contact-info">Contact us here:</p>
+      <a href="{{ url_for('contact') }}" class="contact-info contact-button">Contact</a>
+    </div>
+  </footer>
+
+</html>

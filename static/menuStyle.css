@@ -1,0 +1,85 @@
+ /* Style the tab */
+ .tab {
+    overflow: hidden;
+    border: 1px solid #fcf5ff;
+    background-color: #f3c6e8;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #c887b1;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ff6ebe;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #fcf5ff;
+    border-top: none;
+  } 
+
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  /* Menu pics */
+  .header-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .menu-pics, .menu-cake-pops {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .menu-pics {
+    padding-bottom: 4rem;
+  }
+
+  .dessert-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+  }
+
+  .menu-name {
+    font-size: 1.25rem;
+    text-wrap: wrap;
+    text-align: center;
+  }
+
+  .menu-img > img {
+    height: 20rem;
+    width: 15rem;
+    border-radius: 0.375rem;
+  }

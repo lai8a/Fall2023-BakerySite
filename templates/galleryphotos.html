@@ -1,0 +1,89 @@
+{% from 'navbar.html' import navbar, headerEnd %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gallery</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='gallerystyle.css') }}">
+        <script src="{{ url_for('static', filename='activetab.js') }}" defer></script>
+        <script>
+        function myFunction(img) {
+          var modal = document.getElementById("myModal");
+          var modalImg = document.getElementById("img01");
+          modal.style.display = "block";
+          modalImg.src = img.src;
+        
+          // Close the picture when clicked outside the image
+          modal.onclick = function() {
+            modal.style.display = "none";
+          }
+
+          modalImg.onclick = function(event) {
+            event.stopPropagation();
+          }
+        }
+      </script>
+    </head>
+    <body>
+
+      {{ navbar(employee, loggedin) }}
+      {{ headerEnd() }}
+
+      <div class="headergallery">
+        <h1>Gallery</h1>
+      </div>
+     
+<!-- Photo Grid -->
+<div class="row"> 
+    <div class="column">
+      <img src="/static/images/Menu_Images/IMG_8427.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/bavarianCreme.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/24Carrot.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/flowerCupcakes.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/peanutButterCake.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/oreoBrownie.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/funfettiFudgeCake.jpg" style="width:100%" onclick="myFunction(this);">
+     </div>
+    <div class="column">
+      <img src="/static/images/LS-cake4.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/peanutButterBrownie.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/saltedCaramelBrownie.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/cookiesAndCreamCake.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/cakepopChocolate.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/tiramisu.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/cupcakesCarrotRedVelvet1.jpg" style="width:100%" onclick="myFunction(this);">
+    </div>  
+    <div class="column">
+      <img src="/static/images/Menu_Images/IMG_8423.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/chocolateCheesecake.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/newYorkCheesecake.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/cakepopChocolate2.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/miniCannolis.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/cupcakeGFTogether1.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/Menu_Images/peanutButterCake.jpg" style="width:100%" onclick="myFunction(this);">
+     </div>
+     <div class="column">
+      <img src="/static/images/luscious-sweet-bakery-wedding-cake-3.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-death-by-chocolate.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-flower.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-fudge-brownie-explosion.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-sweet-glutvan.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-gluten-free-lemon.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-24-karat.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-red-velvet.jpg" style="width:100%" onclick="myFunction(this);">
+      <img src="/static/images/luscious-and-sweet-birthday.jpg" style="width:100%" onclick="myFunction(this);">
+     </div>
+     
+  </div>
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
+</div>
+</div>
+{% include 'footer.html' %}
+  </body>
+  </html>

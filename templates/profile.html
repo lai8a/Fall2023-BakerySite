@@ -1,0 +1,128 @@
+{% from 'navbar.html' import navbar, headerEnd %}
+{% from 'alerts.html' import alert %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='alerts.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='activetab.js') }}" defer></script>
+
+    <!--Code below is a borrowed library from bootdev-->
+    <!--It is heavily adjusted/edited to suit the website-->
+    <!--https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details-->
+</head>
+
+<body>   
+    {{ navbar(employee, loggedin) }}
+    {{ headerEnd() }}
+
+    {{ alert() }}
+
+    <div class="container-xl px-4 mt-4">
+    
+    <nav class="nav nav-borders">
+    <a class="nav-link active ms-0" href="{{ url_for('profile') }}">Profile</a>
+    <a class="nav-link" href="{{ url_for('viewOrder') }}">Your Orders</a>
+    </nav>
+    
+    <hr class="mt-0 mb-4">
+    <div class="row">
+    <div class="col-xl-4">
+    
+    <div class="card mb-4 mb-xl-0">
+    <div class="card-header">Profile Picture</div>
+    <div class="card-body text-center">
+        
+    
+    <img class="img-account-profile rounded-circle mb-2" src="/static/images/defaultprofile.jpg" alt="Blank Profile">
+    
+    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+    
+    <button class="btn btn-profile" type="button">Upload new image</button>
+    </div>
+    </div>
+    </div>
+    <div class="col-xl-8">
+    
+    <div class="card mb-4">
+    <div class="card-header">Account Details</div>
+    <div class="card-body">
+    <form action="{{ url_for('profile') }}" method="POST" autocomplete="off">
+    
+        <div class="row gx-3 mb-3">
+        <input type="hidden" id="profile-form" name="profile-form" value="1">
+        
+        <div class="col-md-6">
+        <label class="small mb-1" for="inputFirstName">First name</label>
+        <input class="form-control" id="firstname" name = "firstname" type="text" placeholder="Enter your first name" value="{{ account[1] }}">
+        </div>
+        
+        <div class="col-md-6">
+        <label class="small mb-1" for="inputLastName">Last name</label>
+        <input class="form-control" id="lastname" name = "lastname" type="text" placeholder="Enter your last name" value="{{ account[2] }}">
+        </div>
+        </div>
+        
+        <div class="row gx-3 mb-3">
+        
+        <div class="mb-3">
+        <label class="small mb-1" for="inputEmailAddress">Email address</label>
+        <input class="form-control" id="email" name = "email" type="email" placeholder="Enter your email address" value="{{ account[5] }}">
+        </div>
+
+        <div class="row gx-3 mb-3">
+
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputPhone">Password</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Password" value="{{ account[3] }}" required>
+        </div>
+        
+        <div class="row gx-3 mb-3">
+        
+        <div class="col-md-6">
+        <label class="small mb-1" for="inputPhone">Phone number</label>
+        <input class="form-control" id="phone" name = "phone" type="tel" placeholder="Enter your phone number" value="{{ account[4] }}">
+        </div>
+        <div class = "col-md-6">
+            <input type = "checkbox" id = "deleteProfile" name = "deleteAccount">
+            <label for = "deleteProfile">Delete Account?</label>
+        </div>
+    </div>
+    </div>
+
+        <button class="btn btn-profile" type="submit">Save changes</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Script for Confirming Profile Deletion -->
+    <script>
+        let deleteProfile = document.getElementById("deleteProfile");
+        deleteProfile.addEventListener("click", confirmDeleteAccount);
+
+        function confirmDeleteAccount() {
+            if (confirm("Are you sure you want to delete this account?")) {
+                deleteProfile.checked = true;
+            } else {
+                deleteProfile.checked = false;
+            }
+        }
+    </script>
+
+    <!--The commented JS was included in bootstrap template... feel free to get rid of it or use it-->
+
+    <!--<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>-->
+
+    </body>
+</html>

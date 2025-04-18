@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gallery</title>
+        <!--CSS and JavaScript for slideshow-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='slideshow.css') }}">
+        <script src="{{ url_for('static', filename='gallery.js') }}" defer></script>
+    </head>
+    <body>
+        <!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="/static/images/LS-cupcakedisplay.jpg" style="width: 1000px; height: 600px; border: 10px solid rgb(67, 66, 66);">
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="/static/images/LS-berry-cake.jpg" style="width: 1000px; height: 600px; border: 10px solid rgb(67, 66, 66);">
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 4</div>
+      <img src="/static/images/LS-tarts.jpg" style="width: 1000px; height: 600px; border: 10px solid rgb(67, 66, 66);">
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 4</div>
+      <img src="/static/images/luscious-and-sweet-3.jpg" style="width: 1000px; height: 600px; border: 10px solid rgb(67, 66, 66);" >
+    </div>
+
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div>
+
+  <div class="row2">
+    <div class="column2" style="z-index: 3;">
+        <div class="info-box curved-container">
+            <img src="/static/images/luscious-sweet-chocolate-cupcake-1.jpeg" style="width: 300px; height: 200px; object-fit: cover; object-position: 50% 25%;">
+            <br>
+            <p>Want a Chocolate Cupcake?</p>
+            <br>
+            <br>
+            <p>To view more click down below</p>
+            <br>
+            <a href="{{ url_for('galleryphotos') }}" class="button">View Gallery</a>
+        </div>
+    </div>
+
+    <div class="column2" style="z-index: 3;">
+        <div class="info-box curved-container">
+            <img src="/static/images/LS-gourmet-cake.jpeg" style="width: 300px; height: 200px;">
+            <br>
+            <p>Want to see more custom cakes?</p>
+            <br>
+            <br>
+            <p>To view more click down below</p>
+            <br>
+            <a href="{{ url_for('galleryphotos') }}" class="button">View Gallery</a>
+        </div>
+    </div>
+
+    <div class="column2" style="z-index: 3;">
+        <div class="info-box curved-container">
+            <img src="/static/images/luscious-sweet-candy-sweets.jpg" style="width: 300px; height: 200px;">
+            <br>
+            <p>Would you like to see more sweets that we offer?</p>
+            <br>
+            <p>To view more click down below</p>
+            <br>
+            <a href="{{ url_for('galleryphotos') }}" class="button">View Gallery</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

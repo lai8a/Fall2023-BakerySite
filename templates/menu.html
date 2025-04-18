@@ -1,0 +1,325 @@
+{% from 'navbar.html' import navbar, headerEnd %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menu</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <link rel="stylesheet" href="{{ url_for('static', filename='menuStyle.css') }}">
+        <script src="{{ url_for('static', filename='activetab.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='menu.js') }}" defer></script>
+    </head>
+    <body>
+        {{ navbar(employee, loggedin) }}
+        {{ headerEnd() }}
+
+        <!-- Code taken from w3schools how TO - tabs: https://www.w3schools.com/howto/howto_js_tabs.asp -->
+        <div class="header-center">
+            <h1>Menu</h1>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openType(event, 'Mini');" id="defaultOpen">Minis</button>
+            <button class="tablinks" onclick="openType(event, 'Dessert Trays')">Dessert Trays</button>
+            <button class="tablinks" onclick="openType(event, 'Pies & Cheesecakes')">Pies & Cheesecakes</button>
+            <button class="tablinks" onclick="openType(event, 'Cupcakes')">Cupcakes</button>
+            <button class="tablinks" onclick="openType(event, 'Dietary')">Dietary Specialties Goodies</button>
+            <button class="tablinks" onclick="openType(event, 'Signature')">Signature Flavor Cakes</button>
+            <button class="tablinks" onclick="openType(event, 'Cake')">Cakes</button>
+        </div>
+
+        <div id="Mini" class="tabcontent">
+            <div class="header-center">
+                <h3>Minis</h3>
+            </div>
+            
+            <div class="menu-pics">
+                <div>
+                    <div class="menu-name">Mini Cannolis</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\miniCannolis.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Oreo Brownie</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\oreoBrownie.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Fudge Brownie</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\fudgeBrownie.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Birthday Brownie</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\birthdayBrownie.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Lemon Ricotta Cheesecake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\lemonRicottaCheesecake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">New York Cheesecake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\newYorkCheesecake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Cake Pops</div>
+                    <div class="menu-cake-pops">
+                        <div class="menu-img"><img src="static\images\Menu_Images\cakepopWhiteChocolate.jpg"></div>
+                        <div class="menu-img"><img src="static\images\Menu_Images\cakepopChocolate.jpg"></div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table table-striped">
+                    <thead>
+                        <th>Category</th>
+                        <th>Dessert</th>
+                        <th>Price ($)</th>
+                    </thead>
+                    {%for item in miniMenu %}
+                        <tr>
+                            {%for index in range(2, item|length) %}
+                                <td>{{ item[index] }}</td>
+                            {%endfor%}
+                        </tr>
+                    {%endfor%}
+            </table>
+        </div>
+
+        <div id="Dessert Trays" class="tabcontent">
+            <div class="header-center">
+                <h3>Dessert Trays</h3>
+            </div>
+
+            <div class="dessert-text">
+                <p>If you want items trayed, there is a $5 tray fee or products will be boxed!</p>
+                <p>Customized trays are available upon request! Must contact or call for pricing!</p>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Price ($)</th>
+                </thead>
+                {%for item in trays %}
+                    <tr>
+                        {%for index in range(2, item|length) %}
+                            <td>{{ item[index] }}</td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <div id="Pies & Cheesecakes" class="tabcontent">
+            <div class="header-center">
+                <h3>Pies & Cheesecakes</h3>
+            </div>
+            
+            <table class="table table-striped">
+                <thead>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>Price ($)</th>
+                </thead>
+                {%for item in piecheese %}
+                    <tr>
+                        {%for index in range(2, item|length) %}
+                            <td>{{ item[index] }}</td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <div id="Cupcakes" class="tabcontent">
+            <div class="header-center">
+                <h3>Cupcakes</h3>
+            </div>
+
+            <div class="menu-pics">
+                <div>
+                    <div class="menu-name">Vanilla Birthday</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\vanillaBirthday.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Chocolate Birthday</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\chocolateBirthday.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Rockin Red Velvet</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\rockinRedVelvet.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Carrot and Red Velvet</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\cupcakesCarrotRedVelvet1.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">GF Cupcakes</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\cupcakeGFTogether2.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Flower Cupcakes</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\flowerCupcakes.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Cannoli</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\cannoli.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Death By Chocolate</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\deathByChocolate.jpg"></div>
+                </div>
+            </div>
+
+            <div class="dessert-text">
+                <p>Call about designs other than sprinkles and glitter!</p>
+                <p>Colored frosting (1 color) is $.25 / ea</p>
+                <p>Filled: $.50 / ea</p>
+            </div>
+
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Size</th>
+                    <th>Description</th>
+                    <th>Price ($)</th>
+                </thead>
+                {%for item in cupcake %}
+                    <tr>
+                        {%for index in range(2, item|length) %}
+                            <td>{{ item[index] }}</td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <div id="Dietary" class="tabcontent">
+            <div class="header-center">
+                <h3>Dietary Specialties Goodies</h3>
+            </div>
+
+            <div class="dessert-text">
+                <p>For the cupcakes, they must have a minimum order of 1 dozen (12)!</p>
+                <p>Gluten Free Cheesecakes are <b>crustless</b>!</p>
+                <p>We do not carry began colors and some decorations are not certified gluten free!</p>
+                <p>(for any <b>concerns</b>, please contact a chef)</p>
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                    <th>Category</th>
+                    <th>Size</th>
+                    <th>Price ($)</th>
+                </thead>
+                {%for item in dietary %}
+                    <tr>
+                        {%for index in range(2, item|length) %}
+                            <td>{{ item[index] }}</td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+
+        <div id="Signature" class="tabcontent"> 
+            <div class="header-center">
+                <h3>Signature Flavor Cakes</h3>
+            </div>
+
+            <div class="menu-pics">
+                <div>
+                    <div class="menu-name">Cannoli Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\cannoliCake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Carrot Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\carrotCake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Funfetti Fudge Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\funfettiFudgeCake.jpg"></div>
+                </div> 
+                <div>
+                    <div class="menu-name">Peanut Butter Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\peanutButterCake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Red Velvet Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\redVelvetCake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Cookies and Cream Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\cookiesAndCreamCake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Tiramisu</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\tiramisu.jpg"></div>
+                </div>
+            </div>
+
+            <div class="dessert-text">
+                <p>Some traditional designs will be altered to allow writing and/or flowers!</p>
+                <p>Any other design additions other than writing and/or flowers will be discussed with our Luscious & Sweet Pastry Chef!</p>
+            </div>
+
+                <table class="table table-striped">
+                    <thead>
+                        <th>Size</th>
+                        <th>Servings</th>
+                        <th>Price ($)</th>
+                    </thead>
+                    {%for item in sf %}
+                        <tr>
+                            {%for index in range(3, item|length) %}
+                                <td>{{ item[index] }}</td>
+                            {%endfor%}
+                        </tr>
+                    {%endfor%}
+                </table>
+        </div>
+
+        <div id="Cake" class="tabcontent">
+            <div class="header-center">
+                <h3>Cakes</h3> 
+            </div>
+
+            <div class="menu-pics">
+                <div>
+                    <div class="menu-name">Chocolate Cheesecake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\chocolateCheesecake.jpg"></div>
+                </div>
+                <div>
+                    <div class="menu-name">Crumb Cake</div>
+                    <div class="menu-img"><img src="static\images\Menu_Images\crumbCake.jpg"></div>
+                </div>
+            </div>
+
+            <div class="dessert-text">
+                <p>Please note that <b>prices</b> are for cakes with simple decorations! (ex. sprinkles, flowers, or balloons)</p>
+                <p>Anything that is not listed on this form will need to go through a Luscious & Sweet Bakery Chef!</p>
+            </div>
+            
+            <table class="table table-striped">
+                <thead>
+                    <th>Size</th>
+                    <th>Servings</th>
+                    <th>Price ($)</th>
+                    <th>Cake Enhancement ($)</th>
+                    <th>Filling Enhancement ($)</th>
+                    <th>Frosting Enhancement ($)</th>
+                </thead>
+                {%for item in cake %}
+                    <tr>
+                        {%for index in range(2, item|length) %}
+                            <td>{{ item[index] }}</td>
+                        {%endfor%}
+                    </tr>
+                {%endfor%}
+            </table>
+        </div>
+        {% include 'footer.html' %}
+    </body>
+</html>
