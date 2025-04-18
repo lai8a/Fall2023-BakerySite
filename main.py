@@ -961,4 +961,6 @@ def galleryphotos():
     return render_template("galleryphotos.html", employee=employee, loggedin=loggedin)
 
 if __name__ == '__main__':
-    app.run()
+    import os
+    port = int(os.environ.get("PORT", 10000))  # default port
+    app.run(host='0.0.0.0', port=port)
